@@ -69,7 +69,7 @@ if include_princeton:
     st.info(
         "Princeton requires a headless browser to load its data. "
         "Expect the full report to take **~4–6 minutes** to generate.",
-        st.info("...", icon="ℹ️"),
+        icon="ℹ️"
     )
 elif include_stanford:
     st.info("Estimated run time: **2–4 minutes**.", icon="ℹ️")
