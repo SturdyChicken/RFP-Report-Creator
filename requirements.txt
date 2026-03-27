@@ -6,3 +6,4 @@ python-dateutil
 transformers
 torch
 playwright
+nest_asyncio

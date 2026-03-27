@@ -16,6 +16,11 @@ import tempfile
 import streamlit as st
 import RFP_Functions as rfp
 
+# Install Playwright Chromium browser binaries on start-up
+os.system("playwright install chromium")
+import nest_asyncio
+
+nest_asyncio.apply()
 """ -------------------- IMPORT LIBRARIES -------------------- """
 
 
