@@ -9,7 +9,7 @@ What the user does:
 --------------------/ / RFP Report Creator \ \--------------------
 """
 
-""" -------------------- IMPORT LIBRARIES -------------------- """
+## -------------------- IMPORT LIBRARIES -------------------- ##
 import os
 import glob
 import tempfile
@@ -21,10 +21,10 @@ os.system("playwright install chromium")
 import nest_asyncio
 
 nest_asyncio.apply()
-""" -------------------- IMPORT LIBRARIES -------------------- """
+## -------------------- IMPORT LIBRARIES -------------------- ##
 
 
-""" -------------------- HEADER -------------------- """
+## -------------------- HEADER -------------------- ##
 st.set_page_config(
     page_title="RFP Report Creator",
     layout="centered",
@@ -36,10 +36,10 @@ st.markdown(
 )
 st.divider()
 
-""" -------------------- HEADER -------------------- """
+## -------------------- HEADER -------------------- ##
 
 
-""" -------------------- INPUTS -------------------- """
+## -------------------- INPUTS -------------------- ##
 st.subheader("Upload UCB Data File")
 st.markdown(
     "Navigate to the following URL: https://airtable.com/appMeDyM5cOiMZOqT/shrA7IHmFjjWfB918/tblJT0jbbJHBSnbTI\n\n"
@@ -59,17 +59,17 @@ with col2:
     include_princeton = st.toggle("Princeton", value=True)
 
 st.divider()
-""" -------------------- INPUTS -------------------- """
+## -------------------- INPUTS -------------------- ##
 
 
-""" -------------------- BUTTON -------------------- """
+## -------------------- BUTTON -------------------- ##
 st.subheader("Generate Report")
 
 if include_princeton:
     st.info(
         "Princeton requires a headless browser to load its data. "
         "Expect the full report to take **~4–6 minutes** to generate.",
-        icon="ℹ️"
+        icon="ℹ️",
     )
 elif include_stanford:
     st.info("Estimated run time: **2–4 minutes**.", icon="ℹ️")
@@ -85,10 +85,10 @@ generate_clicked = st.button(
 
 if ucb_file is None:
     st.caption("Upload the UCB CSV above to enable this button.")
-""" -------------------- BUTTON -------------------- """
+## -------------------- BUTTON -------------------- ##
 
 
-""" -------------------- GENERATOR -------------------- """
+## -------------------- GENERATOR -------------------- ##
 if generate_clicked:
 
     # We use two temp directories:
@@ -209,4 +209,4 @@ if generate_clicked:
                 )
             else:
                 st.error("Report file not found after generation. Please try again.")
-""" -------------------- GENERATOR -------------------- """
+## -------------------- GENERATOR -------------------- ##
